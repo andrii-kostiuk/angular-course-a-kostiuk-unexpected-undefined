@@ -1,0 +1,14 @@
+<mat-expansion-panel>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+      Color & count list
+    </mat-panel-title>
+    <mat-panel-description>
+      Here you can choose your set of colors
+    </mat-panel-description>
+  </mat-expansion-panel-header>
+  <mat-list *ngFor="let productColorCount of producColorList">
+    <product-color> </product-color>
+  </mat-list>
+</mat-expansion-panel>
+
