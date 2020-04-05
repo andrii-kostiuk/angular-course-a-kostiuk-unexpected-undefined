@@ -1,14 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { products } from '../products';
+import { Product } from '../core/models/classProduct';
 
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css']
 })
-export class ProductListComponent {
-  products = products;
+export class ProductListComponent implements OnInit{
+  private _productsJSON = products;
+  productsArr : Array<Product> = [];
+
+  ngOnInit(){
+    
+    this._productsJSON.forEach(element => { this.productsArr.push(new Product(element.name, element.price, element.description));
+    });
+  }
 
   share() {
     window.alert('The product has been shared!');

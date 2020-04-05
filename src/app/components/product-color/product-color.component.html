@@ -1,3 +1,19 @@
-<p>
-product-color works!
-</p>
+<mat-grid-list cols="2" rowHeight="3:1" width="100%"> 
+    <mat-grid-tile text-align="left" width="50%">
+        {{[itemColorCount.color]}} 
+    </mat-grid-tile>
+    <mat-grid-tile text-align="right">
+    
+        <!--<div *ngIf="itemColorCount.count>0; then thenBlock else elseBlock"></div>
+        <ng-template #thenBlock>
+            <button mat-stroked-button (click)="minusClick()">-</button> 
+        </ng-template>
+        <ng-template #elseBlock>
+            <button mat-stroked-button disabled>-</button> 
+        </ng-template>-->
+        <button mat-stroked-button (click)="minusClick()" [disabled]="itemColorCount.count===0">-</button> 
+            <!--<input matInput type="number" min="0" ([ngModel])="itemColorCount.count" name = "count">-->
+            {{itemColorCount.count}}
+        <button mat-stroked-button (click)="plusClick()">+</button>
+    </mat-grid-tile>
+</mat-grid-list>

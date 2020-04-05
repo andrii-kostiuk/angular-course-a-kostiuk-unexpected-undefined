@@ -1,0 +1,9 @@
+mat-card {
+    padding: 1px;
+    width: 280px; 
+}
+
+mat-list-item {
+    padding: 1px;
+    margin: 10px;
+}

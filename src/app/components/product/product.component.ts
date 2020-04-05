@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Input } from "@angular/core";
+import { Input, Output } from "@angular/core";
 import { Product } from '../../core/models/classProduct';
+import { ColorCount } from 'src/app/core/models/interfaceColorCount';
 
 
 @Component({
@@ -11,11 +12,15 @@ import { Product } from '../../core/models/classProduct';
 export class ProductComponent implements OnInit {
 
   @Input() product: Product;
-
+  @Output() productColorCountList:Array<ColorCount>;
+  
   constructor() { }
 
   ngOnInit() {
-    
+  }
+  
+  totalEventHandler(_p:number):void {
+    this.product.totalCount = this.product.totalCount + _p;
   }
 
 }

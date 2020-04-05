@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter } from '@angular/core';
 import { Input, Output } from '@angular/core';
 
-import { ColorCount } from '../../core/models/enumColorCount';
+import { ColorCount } from '../../core/models/interfaceColorCount';
 
 
 @Component({
@@ -16,11 +16,16 @@ import { ColorCount } from '../../core/models/enumColorCount';
 })
 export class ProductColorListComponent implements OnInit {
 
-  @Input() producColorList:Array<ColorCount>;
+  @Input() productColorCountList:Array<ColorCount>;
+  @Output() itemColorCount: ColorCount;
+  @Output() totalEvList:EventEmitter<number> = new EventEmitter;
 
   constructor() { }
 
   ngOnInit() {
   }
-
+  
+  itemEventHandler(_p:number):void {
+    this.totalEvList.emit(_p);
+  }
 }

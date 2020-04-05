@@ -13,8 +13,7 @@ import { ProductColorListComponent } from './components/product-color-list/produ
 import { ProductColorComponent } from './components/product-color/product-color.component'
 
 import { MaterialImports} from './core/modules/material-imports.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-//import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+//import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -25,7 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       { path: '', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailsComponent}
     ]),
-    BrowserAnimationsModule
+    //FormsModule,
   ],
   declarations: [
     AppComponent,
