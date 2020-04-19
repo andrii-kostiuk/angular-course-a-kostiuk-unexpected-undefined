@@ -8,13 +8,12 @@
     </mat-panel-description>
   </mat-expansion-panel-header>
   <mat-list *ngFor="let itemColorCount of productColorCountList">
-      <mat-list-item> 
-        <mat-card>
-          
-            <app-product-color [itemColorCount] = "itemColorCount" (totalEvListItem)="itemEventHandler($event)"></app-product-color>
-          
-        </mat-card>
-      </mat-list-item>
+    <mat-list-item>
+      <mat-card class="product-card">
+
+          <app-product-color [itemColorCount]="itemColorCount" (totalEvListItem)="itemEventHandler($event)">
+          </app-product-color>
+      </mat-card>
+    </mat-list-item>
   </mat-list>
 </mat-expansion-panel>
-

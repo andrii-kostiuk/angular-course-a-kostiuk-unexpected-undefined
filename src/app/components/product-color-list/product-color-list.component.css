@@ -1,4 +1,5 @@
-mat-card {
+/* TODO to styling this correctly you should add class to html template like `product-card` */
+mat-card.product-card {
     padding: 1px;
     width: 280px; 
 }
